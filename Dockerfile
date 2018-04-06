@@ -22,3 +22,4 @@ RUN pip3 install --upgrade pip && \
 #CMD python manage.py runserver
 
 CMD ["python"]
+
