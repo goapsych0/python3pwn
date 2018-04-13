@@ -14,6 +14,13 @@ RUN pip3 install --upgrade pip && \
     pip3 install git+https://github.com/arthaud/python3-pwntools.git && \
     pip3 install flask && \
     pip3 install fire && \
+    pip3 install gmpy && \
+#    pip3 install primefac && \
+    echo "**** generate configs/etc... ****" && \
+    echo "from pwn import *" >  /etc/python_startup.rc && \
+    echo "from Crypto.Util.number import bytes_to_long, long_to_bytes, size" >> /etc/python_startup.rc && \
+    echo "### more stuff here ..." >> /etc/python_startup.rc && \
+    echo "export PYTHONSTARTUP=/etc/python_startup.rc" >> /root/.bashrc && \
     echo "**** clean up ****" && \
     rm -rf /root/.cache /tmp/*
 
